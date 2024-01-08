@@ -8,3 +8,8 @@ Card::Card(string _cardName):
 cardName(_cardName)
 {
 }
+
+string Card::getName() const
+{
+    return this->cardName;
+}

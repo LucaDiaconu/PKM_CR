@@ -7,6 +7,7 @@
 
 #include "Card.h"
 #include "PokemonCard.h"
+#include "TrainerCard.h"
 #include <string>
 #include <vector>
 using namespace std;
@@ -20,13 +21,17 @@ public:
     void displayAction();
     void activatePokemonCard(int index);
     void attachEnergyCard(int benchIndex, int energyIndex);
+    void removeEnergyCard(int benchIndex, int energyIndex);
     void attack(int benchIndex, int attackIndex, Player& enemy, int enemyBenchIndex);
     void useTrainer(int benchIndex);
+    void applyTrainerEffect(TrainerCard *trainerCard);
 
 protected:
     string playerName;
     vector<Card*> benchCards;
     vector<PokemonCard*> actionCards;
+
+
 };
 
 

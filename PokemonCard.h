@@ -14,13 +14,20 @@ public :
                 int _evolutionLevel, int _maxHP, int firstAttackCost, string firstAttackDescription, int firstAttackDamage,
                 int secondAttackCost, string secondAttackDescription, int secondAttackDamage);
     void displayInfo() const override;
+    bool isAlive() const;
+    bool countEnergyCards(int attackIndex, int energyCost) const;
+    void recievesAttack(int damage);
+
+    void setHP(int hp);
+    int getMaxHP() const;
+
+    vector<tuple<int, int, string, int>> attacks;
 protected:
     string pokemonType;
     string familyName;
     int evolutionLevel;
     int maxHP;
     int hp;
-    vector<tuple<int, int, string, int>> attacks;
 };
 
 

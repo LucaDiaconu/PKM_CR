@@ -6,13 +6,17 @@
 #include "TrainerCard.h"
 
 
-TrainerCard::TrainerCard(string _trainerEffect) :
-        Card("Energy"), trainerEffect(_trainerEffect)
+TrainerCard::TrainerCard(string _trainerName, string _trainerEffect) :
+        Card(_trainerName), trainerEffect(_trainerEffect)
 {
 }
 
 void TrainerCard::displayInfo() const {
     cout << "Card Name : " << this->cardName
          << ", Effect : " << this->trainerEffect << endl;
+}
+
+string TrainerCard::getEffect() const {
+    return this->trainerEffect;
 }
 

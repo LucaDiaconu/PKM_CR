@@ -15,7 +15,8 @@ PokemonCard::PokemonCard(string cardName, string _pokemonType, string _familyNam
     attacks.emplace_back(_secondAttackCost, 0, _secondAttackDescription, _secondAttackDamage);
 }
 
-void PokemonCard::displayInfo() const {
+void PokemonCard::displayInfo() const
+{
     cout << "Pokemon Card - Name : " << this->cardName
          << ", Type : " << this->pokemonType
          << ", Evolution Level : " << this->evolutionLevel
@@ -30,4 +31,25 @@ void PokemonCard::displayInfo() const {
         cout << "Attack damage: " << get<3>(attacks[i]) << endl;
     }
 
+}
+
+bool PokemonCard::isAlive() const 
+{
+    return (this->hp > 0) ? true : false;
+}
+
+void PokemonCard::recievesAttack(int _damage) {
+    (this->hp > _damage) ? this->hp -= _damage : this->hp = 0;
+}
+
+bool PokemonCard::countEnergyCards(int _attackIndex, int _energyCost) const {
+    return (get<1>(attacks[_attackIndex]) >= _energyCost);
+}
+
+void PokemonCard::setHP(int _hp) {
+    this->hp = _hp;
+}
+
+int PokemonCard::getMaxHP() const {
+    return this->maxHP;
 }

@@ -13,6 +13,7 @@ class Card {
 public:
     Card(string);
     virtual void displayInfo() const = 0;
+    string getName() const;
 
 protected:
     string cardName;

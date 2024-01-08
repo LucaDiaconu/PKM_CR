@@ -10,8 +10,9 @@
 
 class TrainerCard : public Card {
 public:
-    TrainerCard(string trainerEffect);
+    TrainerCard(string trainerName, string trainerEffect);
     void displayInfo() const override;
+    string getEffect() const;
 protected:
     string trainerEffect;
 };

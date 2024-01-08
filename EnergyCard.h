@@ -12,9 +12,9 @@ class EnergyCard: public Card {
 public:
     EnergyCard(string energyType);
     void displayInfo() const override;
-protected:
 
     string energyType;
+
 };
 
 
